@@ -21,13 +21,14 @@ def main():
     
     while running:
         for event in pygame.event.get(): #Checa por eventos (ex: fechar a janela)
-           running = False
+            if event.type == pygame.QUIT: 
+                running = False
            
         #Preenchendo a tela com a cor branca
         screen.fill(WHITE)
         
         #Atualizando a tela
-        pygame.display.flio()
+        pygame.display.flip()
         
         #Definindo a taxa de atualização (FPS)
         clock.tick(60)
